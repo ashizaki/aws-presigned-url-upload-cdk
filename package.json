@@ -9,7 +9,8 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk synth",
-    "generate": "amplify codegen"
+    "generate": "amplify codegen",
+    "create key": "cd keys && openssl genrsa -out private_key.pem 2048 && openssl rsa -pubout -in private_key.pem -out public_key.pem"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.109",
@@ -27,7 +28,10 @@
   },
   "dependencies": {
     "@aws-cdk/aws-appsync-alpha": "^2.56.0-alpha.0",
+    "@aws-sdk/client-cloudfront": "^3.236.0",
     "@aws-sdk/client-s3": "^3.236.0",
+    "@aws-sdk/client-secrets-manager": "^3.237.0",
+    "@aws-sdk/cloudfront-signer": "^3.229.0",
     "@aws-sdk/s3-request-presigner": "^3.236.0",
     "@aws-solutions-constructs/aws-cloudfront-s3": "^2.29.0",
     "@aws-solutions-constructs/aws-lambda-sns": "^2.29.0",
