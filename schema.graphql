@@ -1,0 +1,19 @@
+﻿type PresignedUrl {
+    bucket: String
+    key: String
+    presignedUrl: AWSURL
+}
+
+type Mutation {
+    createUploadPresignedUrl(filename: String): PresignedUrl
+}
+
+type Query {
+    getDownloadPresignedUrl(key: String): PresignedUrl
+}
+
+schema {
+    mutation: Mutation
+    query: Query
+}
+
