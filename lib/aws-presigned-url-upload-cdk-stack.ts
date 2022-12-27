@@ -124,7 +124,6 @@ export class AwsPresignedUrlUploadCdkStack extends Stack {
           REGION: this.region,
           CLOUDFRONT_DISTRIBUTION_DOMAIN:
             cloudFront.cloudFrontWebDistribution.distributionDomainName,
-          PRIVATE_KEY: privateKey,
           PRIVATE_KEY_SECRET_ID: secret.secretName,
           KEY_PAIR_ID: pubKey.publicKeyId,
           EXPIRES_IN: "3600",
